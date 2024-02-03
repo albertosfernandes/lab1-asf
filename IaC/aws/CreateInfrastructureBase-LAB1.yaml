@@ -9,9 +9,6 @@ Resources:
       InstanceType: t2.micro
       KeyName: terraform-ssh-key
       IamInstanceProfile: EC2-SSM-Role
-      # SecurityGroupIds:
-      #   - sg-0badf67fc724fbf0a
-      #SubnetId: subnet-0027573722f821560
       NetworkInterfaces: 
         - AssociatePublicIpAddress: "true"
           DeleteOnTermination: "true"
@@ -20,44 +17,6 @@ Resources:
       Tags:
         - Key: Name
           Value: "CMKPrincipal" 
-      UserData:
-        Fn::Base64: 
-          Fn::Sub: |
-            #!/bin/bash
-            yum update -y
-
-  MysqlNode1:
-    Type: AWS::EC2::Instance
-    Properties:
-      ImageId: ami-079db87dc4c10ac91  # Amazon Linux 2023
-      InstanceType: t2.micro
-      KeyName: terraform-ssh-key
-      IamInstanceProfile: EC2-SSM-Role
-      SecurityGroupIds:
-        - sg-0badf67fc724fbf0a
-      SubnetId: subnet-0027573722f821560
-      Tags:
-        - Key: Name
-          Value: "MySQL-Node1"
-      UserData:
-        Fn::Base64: 
-          Fn::Sub: |
-            #!/bin/bash
-            yum update -y
-
-  MysqlNode2:
-    Type: AWS::EC2::Instance
-    Properties:
-      ImageId: ami-079db87dc4c10ac91  # Amazon Linux 2023
-      InstanceType: t2.micro
-      KeyName: terraform-ssh-key
-      IamInstanceProfile: EEC2-SSM-Role
-      SecurityGroupIds:
-        - sg-0badf67fc724fbf0a
-      SubnetId: subnet-0027573722f821560
-      Tags:
-        - Key: Name
-          Value: "MySQL-Node2"
       UserData:
         Fn::Base64: 
           Fn::Sub: |
