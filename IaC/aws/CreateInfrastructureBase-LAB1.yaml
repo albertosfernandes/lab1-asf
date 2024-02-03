@@ -7,13 +7,13 @@ Resources:
     Properties:
       ImageId: ami-079db87dc4c10ac91  # Amazon Linux 2023
       InstanceType: t2.micro
-      KeyName: terraform-ssh-key
-      IamInstanceProfile: EC2-SSM-Role
+      KeyName: lab1-ssh
+      IamInstanceProfile: SSM-EC2-Role
       NetworkInterfaces: 
         - AssociatePublicIpAddress: "true"
           DeleteOnTermination: "true"
           DeviceIndex: "0"
-          SubnetId: subnet-0027573722f821560
+          SubnetId: subnet-093dffa281cc643bb
       Tags:
         - Key: Name
           Value: "CMKPrincipal" 
