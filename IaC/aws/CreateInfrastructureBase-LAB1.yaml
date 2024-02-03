@@ -2,7 +2,7 @@ AWSTemplateFormatVersion: "2010-09-09"
 Description: Create Infrastructure for LAB1-asf
 
 Resources:
-  CMKPrincipal:
+  CMKMaster:
     Type: AWS::EC2::Instance
     Properties:
       ImageId: ami-079db87dc4c10ac91  # Amazon Linux 2023
@@ -16,7 +16,7 @@ Resources:
           SubnetId: subnet-093dffa281cc643bb
       Tags:
         - Key: Name
-          Value: "CMKPrincipal" 
+          Value: "CMKMaster" 
       UserData:
         Fn::Base64: 
           Fn::Sub: |
