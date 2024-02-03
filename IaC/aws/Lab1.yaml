@@ -1,0 +1,24 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: Create Infrastructure for LAB1-asf
+
+Resources:
+  CMKPrincipal:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-079db87dc4c10ac91  # Amazon Linux 2023
+      InstanceType: t2.micro
+      KeyName: terraform-ssh-key
+      IamInstanceProfile: EC2-SSM-Role
+      NetworkInterfaces: 
+        - AssociatePublicIpAddress: "true"
+          DeleteOnTermination: "true"
+          DeviceIndex: "0"
+          SubnetId: subnet-0027573722f821560
+      Tags:
+        - Key: Name
+          Value: "CMKPrincipal" 
+      UserData:
+        Fn::Base64: 
+          Fn::Sub: |
+            #!/bin/bash
+            yum update -y
