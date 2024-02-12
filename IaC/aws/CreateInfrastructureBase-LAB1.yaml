@@ -1,6 +1,14 @@
 AWSTemplateFormatVersion: "2010-09-09"
 Description: Create Infrastructure for LAB1-asf
 
+Parameters:
+  SubnetId:
+    Type: String
+    Description: Id da subnet onde a instância será criada
+  SSMRoleEc2:
+    Type: String
+    Description: Nome da Role SSM que fornece acesso a EC2
+
 Resources:
   CMKMaster:
     Type: AWS::EC2::Instance
@@ -8,12 +16,12 @@ Resources:
       ImageId: ami-079db87dc4c10ac91  # Amazon Linux 2023
       InstanceType: t2.micro
       KeyName: lab1-ssh
-      IamInstanceProfile: SSM-EC2-Role
+      IamInstanceProfile: !Ref SSMRoleEc2
       NetworkInterfaces: 
         - AssociatePublicIpAddress: "true"
           DeleteOnTermination: "true"
           DeviceIndex: "0"
-          SubnetId: subnet-093dffa281cc643bb
+          SubnetId: !Ref SubnetId
       Tags:
         - Key: Name
           Value: "CMKMaster" 
