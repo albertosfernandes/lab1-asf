@@ -1,11 +1,6 @@
 AWSTemplateFormatVersion: "2010-09-09"
 Description: Create Infrastructure for LAB1-asf
 
-Parameters:
-  SubnetId:
-    Type: String
-    Description: Id da subnet onde a instância será criada
-
 Resources:
   CMKMaster:
     Type: AWS::EC2::Instance
