@@ -5,9 +5,6 @@ Parameters:
   SubnetId:
     Type: String
     Description: Id da subnet onde a instância será criada
-  SSMRoleEc2:
-    Type: String
-    Description: Nome da Role SSM que fornece acesso a EC2
 
 Resources:
   CMKMaster:
@@ -16,12 +13,12 @@ Resources:
       ImageId: ami-079db87dc4c10ac91  # Amazon Linux 2023
       InstanceType: t2.micro
       KeyName: lab1-ssh
-      IamInstanceProfile: !Ref SSMRoleEc2
+      IamInstanceProfile: EC2-SSM-Role
       NetworkInterfaces: 
         - AssociatePublicIpAddress: "true"
           DeleteOnTermination: "true"
           DeviceIndex: "0"
-          SubnetId: !Ref SubnetId
+          SubnetId: subnet-06ab5911aacc1f1fa
       Tags:
         - Key: Name
           Value: "CMKMaster" 
