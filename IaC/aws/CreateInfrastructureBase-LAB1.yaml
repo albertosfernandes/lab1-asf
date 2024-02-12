@@ -7,7 +7,7 @@ Resources:
     Properties:
       ImageId: ami-079db87dc4c10ac91  # Amazon Linux 2023
       InstanceType: t2.micro
-      KeyName: lab1-ssh
+      KeyName: lab1-ssh-hmg
       IamInstanceProfile: EC2-SSM-Role
       NetworkInterfaces: 
         - AssociatePublicIpAddress: "true"
