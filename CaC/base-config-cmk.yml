@@ -15,5 +15,9 @@
     - name: Install checkmk
       ansible.builtin.yum:
         name:
+          - dialog
+          - freeradius-utils
+          - libgsf
+          - xinetd
           - https://download.checkmk.com/checkmk/2.1.0p30/check-mk-free-2.1.0p30-el8-38.x86_64.rpm
         state: present
