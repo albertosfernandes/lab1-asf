@@ -2,13 +2,10 @@
 - name: Clonar repositório Git
   hosts: all
   become: true
+  gather_facts: true
   tasks:
-    - name: Instalar o git
-      apt:
-        name: git
-        state: present
-      become: true
     - name: Clonar repositório
       git:
         repo: https://github.com/albertosfernandes/ansible.git
         dest: /root/
+        

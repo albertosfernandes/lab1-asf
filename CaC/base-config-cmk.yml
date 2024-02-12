@@ -1,0 +1,19 @@
+---
+- name: Config para estrutura base do LAB1
+  hosts: all
+  become: true
+  gather_facts: true
+
+  tasks:
+    - name: Install pre-requisitos
+      ansible.builtin.yum:
+        name:  
+          - git
+          - ansible
+        state: present
+    
+    - name: Install checkmk
+      ansible.builtin.yum:
+        name:
+          - https://download.checkmk.com/checkmk/2.1.0p30/check-mk-free-2.1.0p30-el8-38.x86_64.rpm
+        state: present
