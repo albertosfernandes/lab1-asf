@@ -14,7 +14,7 @@ Resources:
   CMKMaster:
     Type: AWS::EC2::Instance
     Properties:
-      ImageId: !Ref AMIVersionUbuntu20
+      ImageId: !Ref AMIVersionRedHat9
       InstanceType: t2.micro
       KeyName: lab1-ssh-hmg
       IamInstanceProfile: EC2-SSM-Role
