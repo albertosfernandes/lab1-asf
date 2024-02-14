@@ -17,7 +17,4 @@
           - https://download.checkmk.com/checkmk/2.2.0p22/check-mk-raw-2.2.0p22-el9-38.x86_64.rpm
         state: present
         disable_gpg_check: yes
-
-    - name: Show SO distribution
-      debug:
-        msg: "SO= {{ ansible_facts['ansible_distribution'] }}, {{ ansible_facts['ansible_distribution_version'] }}"
+      when: ansible_distribution == "RedHat"
