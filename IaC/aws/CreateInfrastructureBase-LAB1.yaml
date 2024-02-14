@@ -5,8 +5,8 @@ Resources:
   CMKMaster:
     Type: AWS::EC2::Instance
     Properties:
-      ImageId: ami-0fe630eb857a6ec83  # Amazon Linux 2023
-      InstanceType: t2.micro
+      ImageId: ami-0fe630eb857a6ec83  # Red Hat 9
+      InstanceType: t3a.micro
       KeyName: lab1-ssh-hmg
       IamInstanceProfile: EC2-SSM-Role
       NetworkInterfaces: 

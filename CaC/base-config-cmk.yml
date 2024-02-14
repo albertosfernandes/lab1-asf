@@ -15,10 +15,7 @@
     - name: Install checkmk
       ansible.builtin.yum:
         name:
-          - perl-CPAN
-          - perl-Test-Simple
-          - postgresql
-          - https://download.checkmk.com/checkmk/2.1.0p30/check-mk-free-2.1.0p30-el8-38.x86_64.rpm
+          - https://download.checkmk.com/checkmk/2.2.0p22/check-mk-raw-2.2.0p22-el9-38.x86_64.rpm
         state: present
 
     - name: Show SO distribution
