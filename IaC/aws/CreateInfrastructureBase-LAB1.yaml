@@ -1,12 +1,21 @@
 AWSTemplateFormatVersion: "2010-09-09"
 Description: Create Infrastructure for LAB1-asf
 
+Parameters:
+  AMIVersionRedHat9:
+    Type: String
+    Default: "ami-0fe630eb857a6ec83"
+  AMIVersionUbuntu20:
+    Type: String
+    Default: "ami-06aa3f7caf3a30282"
+
+
 Resources:
   CMKMaster:
     Type: AWS::EC2::Instance
     Properties:
-      ImageId: ami-0fe630eb857a6ec83  # Red Hat 9
-      InstanceType: t3a.micro
+      ImageId: !Ref AMIVersionUbuntu20
+      InstanceType: t2.micro
       KeyName: lab1-ssh-hmg
       IamInstanceProfile: EC2-SSM-Role
       NetworkInterfaces: 
