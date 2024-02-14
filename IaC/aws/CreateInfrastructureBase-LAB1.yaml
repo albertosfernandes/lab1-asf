@@ -5,7 +5,7 @@ Resources:
   CMKMaster:
     Type: AWS::EC2::Instance
     Properties:
-      ImageId: ami-0cf10cdf9fcd62d37  # Amazon Linux 2
+      ImageId: ami-0e731c8a588258d0d  # Amazon Linux 2023
       InstanceType: t2.micro
       KeyName: lab1-ssh-hmg
       IamInstanceProfile: EC2-SSM-Role
