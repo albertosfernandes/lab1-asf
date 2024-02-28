@@ -47,5 +47,5 @@ Resources:
         Fn::Base64: 
           Fn::Sub: |
             #!/bin/bash
-            apt update
-            apt install mariadb-server
+            apt update -y
+            apt install mariadb-server -y
