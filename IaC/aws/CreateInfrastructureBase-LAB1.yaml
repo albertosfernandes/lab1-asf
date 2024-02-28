@@ -39,9 +39,7 @@ Resources:
       ImageId: !Ref AMIVersionUbuntu20
       InstanceType: t2.micro
       KeyName: lab1-ssh-hmg
-      IamInstanceProfile: EC2-SSM-Role
-      SecurityGroups:
-        - sg-0fb3f2203cbe6fbf6
+      IamInstanceProfile: EC2-SSM-Role      
       Tags:
         - Key: Name
           Value: "Mariadb-Node1" 
