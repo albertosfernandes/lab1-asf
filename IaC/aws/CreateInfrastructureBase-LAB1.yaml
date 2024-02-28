@@ -40,7 +40,7 @@ Resources:
       InstanceType: t2.micro
       KeyName: lab1-ssh-hmg
       IamInstanceProfile: EC2-SSM-Role
-      SubnetId: subnet-06ab5911aacc1f1fa       
+      SubnetId: subnet-0dff9f62370af7971       
       Tags:
         - Key: Name
           Value: "Mariadb-Node1" 
