@@ -22,7 +22,7 @@ Resources:
         - AssociatePublicIpAddress: "true"
           DeleteOnTermination: "true"
           DeviceIndex: "0"
-          SubnetId: subnet-06ab5911aacc1f1fa
+          SubnetId: subnet-0dff9f62370af7971
       Tags:
         - Key: Name
           Value: "CMKMaster" 
