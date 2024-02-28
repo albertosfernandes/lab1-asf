@@ -1,21 +1,26 @@
 ---
-# tasks file for init-db
-  - name: Create database
-    become: yes
-    ansible.builtin.command: sudo mysql -e "CREATE DATABASE asfapi;"
-    tags: create database
+- name: Mariadb config for Lab1-asf
+  hosts: all
+  become: true
+  gather_facts: yes
 
-  - name: Create user
-    become: yes
-    ansible.builtin.command: sudo mysql -e "CREATE USER 'master'@'%' IDENTIFIED BY '{{mysql_user}}';"
-    tags: create user
+  tasks:
+    - name: Create database
+      become: yes
+      ansible.builtin.command: sudo mysql -e "CREATE DATABASE asfapi;"
+      tags: create database
 
-  - name: Grant privileges
-    become: yes
-    ansible.builtin.command: sudo mysql -e "GRANT ALL PRIVILEGES ON *.* TO 'master'@'%';"
-    tags: grant-privileges
+    - name: Create user
+      become: yes
+      ansible.builtin.command: sudo mysql -e "CREATE USER 'master'@'%' IDENTIFIED BY '{{mysql_user}}';"
+      tags: create user
 
-  - name: Flush privileges
-    become: yes
-    ansible.builtin.command: sudo mysql -e "FLUSH PRIVILEGES;"
-    tags: flush-privileges
+    - name: Grant privileges
+      become: yes
+      ansible.builtin.command: sudo mysql -e "GRANT ALL PRIVILEGES ON *.* TO 'master'@'%';"
+      tags: grant-privileges
+
+    - name: Flush privileges
+      become: yes
+      ansible.builtin.command: sudo mysql -e "FLUSH PRIVILEGES;"
+      tags: flush-privileges
