@@ -33,7 +33,7 @@ Resources:
             yum update -y
             yum install -y https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/linux_amd64/amazon-ssm-agent.rpm
             systemctl enable amazon-ssm-agent
-  Mariadb-Node1:
+  MariadbNode1:
     Type: AWS::EC2::Instance
     Properties:
       ImageId: !Ref AMIVersionUbuntu20
