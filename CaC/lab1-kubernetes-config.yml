@@ -1,0 +1,12 @@
+---
+- name: Lab1-asf config kubernetes environment
+  hosts: all
+  become: true
+  gather_facts: yes
+
+  tasks:
+    - name: Add node
+      ansible.builtin.shell: |
+        kubeadm join {{ k8s_cluster }}:6443 --token {{ token }} \
+        --discovery-token-ca-cert-hash {{ token_hash }}
+        
