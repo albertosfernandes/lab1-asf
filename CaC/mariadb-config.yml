@@ -24,3 +24,9 @@
       become: yes
       ansible.builtin.command: sudo mysql -e "FLUSH PRIVILEGES;"
       tags: flush-privileges
+
+    - name: Alterar a linha bind-address
+      lineinfile:
+        path: /etc/mysql/mariadb.conf.d/50-server.cnf
+        regexp: '^bind-address\s*='
+        line: 'bind-address = 0.0.0.0'
