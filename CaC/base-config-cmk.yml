@@ -18,3 +18,13 @@
         state: present
         disable_gpg_check: yes
       when: ansible_distribution == "RedHat"
+
+    - name: Create a site
+      ansible.builtin.shell: |
+        omd create lab1_asf
+      register: create_output
+
+    - name: Show site information
+      ansible.builtin.debug:
+        msg: create_output
+        
