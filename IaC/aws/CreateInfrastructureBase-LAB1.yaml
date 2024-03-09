@@ -11,24 +11,6 @@ Parameters:
 
 
 Resources:
-  CMKMaster:
-    Type: AWS::EC2::Instance
-    Properties:
-      ImageId: !Ref AMIVersionRedHat9
-      InstanceType: t2.small
-      KeyName: lab1-ssh-hmg
-      IamInstanceProfile: EC2-SSM-Role
-      SubnetId: subnet-06ab5911aacc1f1fa
-      Tags:
-        - Key: Name
-          Value: "CMKMaster" 
-      UserData:
-        Fn::Base64: 
-          Fn::Sub: |
-            #!/bin/bash
-            yum update -y
-            yum install -y https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/linux_amd64/amazon-ssm-agent.rpm
-            systemctl enable amazon-ssm-agent
   MariadbNode1:
     Type: AWS::EC2::Instance
     Properties:
