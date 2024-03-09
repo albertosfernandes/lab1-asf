@@ -14,7 +14,7 @@
     - name: Install checkmk
       ansible.builtin.yum:
         name:
-          - https://download.checkmk.com/checkmk/2.2.0p22/check-mk-raw-2.2.0p22-el9-38.x86_64.rpm
+          - https://download.checkmk.com/checkmk/2.1.0p40/check-mk-raw-2.1.0p40-el9-38.x86_64.rpm
         state: present
         disable_gpg_check: yes
       when: ansible_distribution == "RedHat"
