@@ -15,7 +15,7 @@ Resources:
     Type: AWS::EC2::Instance
     Properties:
       ImageId: !Ref AMIVersionRedHat9
-      InstanceType: t2.micro
+      InstanceType: t2.small
       KeyName: lab1-ssh-hmg
       IamInstanceProfile: EC2-SSM-Role
       SubnetId: subnet-06ab5911aacc1f1fa
